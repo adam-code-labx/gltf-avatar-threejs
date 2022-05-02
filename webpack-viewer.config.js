@@ -4,6 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 // const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: {
     // app: './index.js'
     app: './src/GLTFAvatarViewer.js'

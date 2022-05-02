@@ -64,7 +64,7 @@ Viewer.prototype.init = function(canvas) {
             } 
         );
     } else {
-        this.renderer = new THREE.WebGLRenderer( { 
+        this.renderer = new THREE.WebGLRenderer( {
             antialias: true ,
             preserveDrawingBuffer: this.preserveDrawingBuffer
         } );
@@ -196,6 +196,7 @@ var animate = Viewer.prototype.animate = function() {
     this.orbitControls.update();
 
     // render();
+    this.renderer.setRenderTarget(null);
     this.renderer.render(this.scene, this.camera);
 };
 
@@ -442,7 +443,7 @@ Viewer.prototype.selectSkeleton = function(key, uri) {
 
             // self.skeletonOnLoad(key, data);
 
-            
+
         }
 
         self.skeletonOnLoad(key, data);
@@ -455,8 +456,8 @@ Viewer.prototype.selectSkeleton = function(key, uri) {
                 }
             }
         }
-        
-        
+
+
     }, undefined, function ( error ) {
         console.error( error );
     } );
@@ -492,7 +493,7 @@ Viewer.prototype.skeletonOnLoad = function(key, data) {
 
         this.skeletonClips = {};
         this.skeletonActionStates = {};
-        this.skeletonVisibilityId2Name = gltf.gl_avatar.visibilityId2Name || []; 
+        this.skeletonVisibilityId2Name = gltf.gl_avatar.visibilityId2Name || [];
         // this.skeletonActionStates = new Map();
 
         this.skeletonMixer = new THREE.AnimationMixer( gltf.scene );

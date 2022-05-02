@@ -4,6 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 // const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: {
     // app: './index.js'
     app: './src/app.js'
@@ -49,8 +50,9 @@ module.exports = {
         })
     ],
   devServer: {
-    // contentBase: path.join(__dirname, "demo"),
-    contentBase: __dirname,
-    port: 7000
+      static: {
+          directory: __dirname,
+      },
+      port: 7002
   }
 };
