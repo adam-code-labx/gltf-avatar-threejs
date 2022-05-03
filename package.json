@@ -25,7 +25,7 @@
     "dat.gui": "^0.7.9",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
-    "three": "^0.140.0",
+    "three": "~0.135.0",
     "three-orbit-controls": "^82.1.0"
   },
   "devDependencies": {
